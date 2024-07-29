@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get IP Address</title>
+</head>
+<body>
+    <button id="getIpButton">Get ip</button>
+
+    <script>
+        document.getElementById('getIpButton').addEventListener('click', function() {
+            const button = this;
+            const url = 'https://api.ipify.org?format=json'; // لاختبار الخطأ استخدم 'https://api.ipify.orgx/'
+
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    button.textContent = data.ip;
+                })
+                .catch(error => {
+                    window.alert('Fetch error: ' + error.message);
+                });
+        });
+    </script>
+</body>
+</html>

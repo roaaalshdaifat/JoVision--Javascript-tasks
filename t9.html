@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            get ip add
+        </title>
+        
+    </head>
+<body>
+    <button id="get-ip">get-ip</button>
+    <script>
+document.getElementById('get-ip').addEventListener('click',function(){
+    fetch( "https://api.ipify.org?format=json" )
+    .then(Response=>Response.json())
+    .then(Date=>{
+        console.log('your ip adderss',data.ip);
+    } )
+    .catch(error=>
+    { 
+        console.error('error fetch ip:',error);
+     });
+    });
+    </script>
+</body>
+
+
+</html>
+
+

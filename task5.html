@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even Numbers Sum</title>
+    <script>
+        function handleClick() {
+            let numbers = [];
+            for (let i = 0; i <= 100; i++) {
+                numbers.push(i);
+            }
+            let evenNumbersSum = 0;
+            for (let i = 0; i < numbers.length; i++) {
+                if (numbers[i] % 2 === 0) {
+                    evenNumbersSum += numbers[i];
+                }
+            }
+            console.log(evenNumbersSum);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="handleClick()">Click me</button>
+</body>
+</html>

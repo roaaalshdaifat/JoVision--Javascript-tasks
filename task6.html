@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods</title>
+    <script>
+        function createArray() {
+            return Array.from({length: 101}, (_, i) => i);
+        }
+
+        function buttonOne() {
+            let numbers = createArray();
+            let filteredNumbers = numbers.filter(num => num % 3 !== 0);
+            console.log(filteredNumbers);
+        }
+
+        function buttonTwo() {
+            let numbers = createArray();
+            let extendedNumbers = numbers.concat(Array.from({length: 51}, (_, i) => i + 100));
+            console.log(extendedNumbers);
+        }
+
+        function buttonThree() {
+            let numbers = createArray();
+            let incrementedNumbers = numbers.map(num => num + 3);
+            console.log(incrementedNumbers);
+        }
+
+        function buttonFour() {
+            let numbers = createArray();
+            let slicedNumbers = numbers.slice(20, 41);
+            console.log(slicedNumbers);
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function buttonFive() {
+            let numbers = createArray();
+            shuffleArray(numbers);
+            console.log('Shuffled Array:', numbers);
+            let sortedNumbers = numbers.sort((a, b) => b - a);
+            console.log('Sorted Array:', sortedNumbers);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="buttonOne()">Button One</button>
+    <button onclick="buttonTwo()">Button Two</button>
+    <button onclick="buttonThree()">Button Three</button>
+    <button onclick="buttonFour()">Button Four</button>
+    <button onclick="buttonFive()">Button Five</button>
+</body>
+</html>
